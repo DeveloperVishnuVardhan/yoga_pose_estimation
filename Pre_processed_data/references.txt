@@ -1,0 +1,4 @@
+Dataset Link: https://www.kaggle.com/datasets/shrutisaxena/yoga-pose-image-classification-dataset?resource=download
+Mediapipe Documentation.
+Posenet explanation: https://medium.com/harare-school-of-ai/hello-world-thought-we-should-cover-the-glorious-posenet-architecture-but-before-we-get-down-into-f5e14f892edc
+Tensorflow posenet explanation: https://blog.tensorflow.org/2018/05/real-time-human-pose-estimation-in.html
