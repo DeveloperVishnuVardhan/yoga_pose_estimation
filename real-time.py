@@ -3,11 +3,7 @@ import mediapipe as mp
 from utils import get_data_point, load_model
 import os
 
-image_directory = "Pre_processed_data/test_images"
-image_extension = '.png'
-# Get a sorted list of image file names in the directory
-image_files = sorted([f for f in os.listdir(
-    image_directory) if f.endswith(image_extension)])
+
 model_path = "Models/model_ANNModel.pth"
 pose = mp.solutions.pose.Pose(static_image_mode=False)
 mp_drawing = mp.solutions.drawing_utils
@@ -33,9 +29,11 @@ font_thickness = 2
 text_color = (0, 255, 0)  # green text
 bg_color = (0, 0, 0)  # Black
 
+cap = cv2.VideoCapture("/Users/jyothivishnuvardhankolla/Desktop/Yoga_pose_estimation/WhatsApp Video 2023-04-26 at 1.53.46 PM.mp4")
 while True:
-    for image_file in image_files:
-        frame = cv2.imread(os.path.join(image_directory, image_file))
+        ret, frame = cap.read()
+        if not ret:
+             break
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         annotated_image = rgb_frame.copy()
         key_points = pose.process(rgb_frame)
@@ -55,7 +53,7 @@ while True:
         cv2.imshow('Annotated_stream', bgr_annotated_img)
 
         # Wait for 1 millisecond and check if the user has pressed 'q'.
-        if cv2.waitKey(2000) & 0xFF == ord('q'):
+        if cv2.waitKey(5) & 0xFF == ord('q'):
             break
 
 
