@@ -12,5 +12,10 @@ can benefit the yoga community. The developed system can also detect incorrect y
 pose by specifying where the pose is going wrong. The project also presents several approaches to pose estimation and all approaches
 can be easily extended to a different use case.
 
-Link for presentation: https://drive.google.com/drive/folders/1s7yZk9A7nXT4UdOqvmik5g3TkOHlFAIR?usp=sharing
+Link for presentation and Report: https://drive.google.com/drive/folders/1s7yZk9A7nXT4UdOqvmik5g3TkOHlFAIR?usp=sharing
 Link for PPT: https://docs.google.com/presentation/d/1oEUySzculNPwAtZ4ZDV5BSweHf9qUdH-27qNf97cmCY/edit?usp=sharing
+
+Structure of Project:
+main1.py, utils1.py, instructor.py contains code for angle heuristics based estimation.
+
+dataprep.py, effnet.ipynb, main.py, models.py, real-time.py, utils.py contains code for deeplearning based pose estimations.

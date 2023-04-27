@@ -1,3 +1,10 @@
+"""
+1. Jyothi Vishnu Vardhan Kolla
+2. Vidya Ganesh
+Project: CS-5330 -> Spring 2023.
+This file contains the main.py
+"""
+
 import ast
 import torch
 import matplotlib.pyplot as plt
@@ -14,6 +21,7 @@ def try_literal_eval(value):
 
 
 def evaluate_model(model, val_loader, criterion, device):
+    # Function that performs evaluations of the model.
     model.eval()
     correct = 0
     total = 0
@@ -32,6 +40,7 @@ def evaluate_model(model, val_loader, criterion, device):
 
 
 def train_model(model, train_loader, val_loader, num_epochs, device):
+    # function that trains the model.
     criterion = torch.nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
@@ -84,6 +93,7 @@ def train_model(model, train_loader, val_loader, num_epochs, device):
 
 
 def plot_curves(results_path: str):
+    # function that plots the loss-curves.
     results_df = pd.read_csv(results_path)
     epochs = results_df["Unnamed: 0"]
     val_loss = results_df["val_loss"]
@@ -100,12 +110,14 @@ def plot_curves(results_path: str):
 
 
 def load_model(model_path: str):
+    # function to load the model.
     loaded_model = ComplexModel(99, 128, 107)
     loaded_model.load_state_dict(torch.load(model_path))
     return loaded_model.eval()
 
 
 def get_data_point(key_points):
+    # function to get key-points.
     final_datapoint = []
     for idx, landmark in enumerate(key_points.landmark):
         x, y, z = landmark.x, landmark.y, landmark.z

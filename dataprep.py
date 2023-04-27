@@ -1,3 +1,10 @@
+"""
+1. Jyothi Vishnu Vardhan Kolla
+2. Vidya Ganesh
+Project: CS-5330 -> Spring 2023.
+This file contains the main.py
+"""
+
 import os
 import glob
 import mediapipe as mp
@@ -78,6 +85,7 @@ class BatchData:
         self.transformed_path = tranformed_path
 
     def prepare_data(self, X_train, X_val, y_train, y_val):
+        # Function that prepares the data ready to be trained by tensorflow.
         X_train_tensor = torch.tensor(X_train.values, dtype=torch.float)
         y_train_tensor = torch.tensor(
             y_train, dtype=torch.long)
@@ -93,6 +101,7 @@ class BatchData:
         return train_loader, val_loader
 
     def split_data(self):
+        # Functions that splits the data into train and val sets.
         df = pd.read_csv(self.transformed_path)
         X = df.drop(["Unnamed: 0", "34"], axis=1)
         y = df["34"]
@@ -106,6 +115,7 @@ class BatchData:
         return X_train, X_val, y_train, y_val
 
     def batch_data(self):
+        # Function that batches and prepares the data.
         X_train, X_val, y_train, y_val = self.split_data()
         train_loader, val_loader = self.prepare_data(
             X_train, X_val, y_train, y_val)

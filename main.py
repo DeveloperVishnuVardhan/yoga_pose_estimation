@@ -1,5 +1,8 @@
 """
-Jyothi Vishnu Vardhan Kolla.
+1. Jyothi Vishnu Vardhan Kolla
+2. Vidya Ganesh
+Project: CS-5330 -> Spring 2023.
+
 This is the main file which performs tasks such as
 explorataroy data-preparation,model-training based on command line inputs.
 """
@@ -50,7 +53,7 @@ def main(argv):
         model_path = "Models/model_ANNModel.pth"
         torch.save(model.state_dict(), model_path)
 
-    if prediction_mode == 1:
+    if prediction_mode == 1: # Perform predictions.
         model_path = "Models/model_ANNModel.pth"
         test_images_path = "Pre_processed_data/test_images"
 

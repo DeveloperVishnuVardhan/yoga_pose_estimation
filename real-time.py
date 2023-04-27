@@ -1,3 +1,10 @@
+"""
+1. Jyothi Vishnu Vardhan Kolla
+2. Vidya Ganesh
+Project: CS-5330 -> Spring 2023.
+This file contains the main.py
+"""
+
 import cv2
 import mediapipe as mp
 from utils import get_data_point, load_model

@@ -1,3 +1,10 @@
+"""
+1. Jyothi Vishnu Vardhan Kolla
+2. Vidya Ganesh
+Project: CS-5330 -> Spring 2023.
+This file contains the main.py
+"""
+
 import torch.nn.functional as F
 import torch
 import torch.nn as nn
@@ -5,6 +12,7 @@ import torch.nn as nn
 
 class ANNModel(nn.Module):
     def __init__(self, input_size, num_classes):
+        # Class to create a simpler ANN model.
         super(ANNModel, self).__init__()
         self.layer1 = nn.Linear(input_size, 256)
         self.layer2 = nn.Linear(256, 512)
@@ -21,6 +29,7 @@ class ANNModel(nn.Module):
 
 class ComplexModel(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
+        # Class to create a complex model.
         super(ComplexModel, self).__init__()
 
         self.layer1 = nn.Sequential(
